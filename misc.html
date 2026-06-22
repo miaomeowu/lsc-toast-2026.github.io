@@ -11,7 +11,6 @@
 </head>
 <body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
-    <!-- Navigation Bar -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
         <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
             <div class="text-md font-bold tracking-wider text-[#F2A900]">
@@ -27,15 +26,13 @@
         </div>
     </nav>
 
-    <!-- GATEWAY CONTENT INNER BODY -->
     <main class="max-w-md mx-auto py-12 px-6 my-auto w-full">
         <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 text-center space-y-6">
             <h1 class="text-xl font-bold tracking-wider text-[#004165] uppercase">
-                 EXECUTIVE GATEWAY
+                // EXECUTIVE_GATEWAY
             </h1>
             <p class="text-xs text-gray-500">Authorized personnel verification required.</p>
 
-            <!-- Input Form Box -->
             <div id="authBox" class="space-y-4">
                 <input type="password" id="passcodeInput" maxlength="6" placeholder="ENTER 6-DIGIT CODE" 
                     class="w-full tracking-widest text-center font-bold border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 text-md focus:outline-none focus:border-[#004165] focus:ring-1 focus:ring-[#004165]">
@@ -47,24 +44,20 @@
                 <p id="errorMessage" class="text-xs text-red-600 font-bold hidden">❌ INVALID ACCESS CREDENTIALS</p>
             </div>
 
-            <!-- Secret Revealed Area (Hidden by default) -->
             <div id="secretBox" class="hidden transition duration-500 space-y-4">
                 <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-xs font-bold">
                     🔓 ACCESS GRANTED · DASHBOARD LINK COMPILED
                 </div>
-                <!-- Linked directly to your Notion workspace portal -->
-                <a id="dashboardLink" href="https://app.notion.com/p/38728a65701980d6b934fdd92f6c10dc?source=copy_link" target="_blank" 
+                <a id="dashboardLink" href="https://docs.google.com/spreadsheets/d/1gdmzlatHGzMhv9q3sz-tw-sF0u6fofhINSJphSsk2DY/edit?usp=sharing" target="_blank" 
                     class="block w-full text-center bg-[#F2A900] text-[#004165] hover:bg-[#004165] hover:text-white font-extrabold px-6 py-4 rounded-xl shadow-md transition text-xs tracking-wider uppercase animate-pulse">
-                    Open Notion Dashboard →
+                    Open Results Spreadsheet →
                 </a>
             </div>
         </div>
     </main>
 
-    <!-- Bottom Spacing Anchor -->
     <div class="pb-16"></div>
 
-    <!-- Security Authentication Script -->
     <script>
         function verifyPasscode() {
             const input = document.getElementById('passcodeInput').value;
@@ -72,8 +65,8 @@
             const authBox = document.getElementById('authBox');
             const secretBox = document.getElementById('secretBox');
             
-            // Edit the 6 digits inside the quotation marks to set your custom password!
-            if (input === "888888") {
+            // Adjust the string sequence here if you decide to change the passcode!
+            if (input === "at5z91") {
                 errorMsg.classList.add('hidden');
                 authBox.classList.add('hidden');
                 secretBox.classList.remove('hidden');
