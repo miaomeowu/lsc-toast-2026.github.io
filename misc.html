@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscellaneous Portal | LSC Toastmasters 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <div class="text-md font-bold tracking-wider text-[#F2A900]">
+                LSC TOASTMASTERS 2026
+            </div>
+            <div class="space-x-4 md:space-x-6 text-xs font-bold">
+                <a href="index.html" class="hover:text-[#F2A900] transition">[HOME]</a>
+                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
+                <a href="apply.html" class="hover:text-[#F2A900] transition">[APPLY]</a>
+                <a href="contact.html" class="hover:text-[#F2A900] transition">[CONTACT]</a>
+                <a href="misc.html" class="text-[#F2A900] transition">[MISC]</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- GATEWAY CONTENT INNER BODY -->
+    <main class="max-w-md mx-auto py-12 px-6 my-auto w-full">
+        <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 text-center space-y-6">
+            <h1 class="text-xl font-bold tracking-wider text-[#004165] uppercase">
+                // EXECUTIVE_GATEWAY
+            </h1>
+            <p class="text-xs text-gray-500">Authorized personnel verification required.</p>
+
+            <!-- Input Form Box -->
+            <div id="authBox" class="space-y-4">
+                <input type="password" id="passcodeInput" maxlength="6" placeholder="ENTER 6-DIGIT CODE" 
+                    class="w-full tracking-widest text-center font-bold border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 text-md focus:outline-none focus:border-[#004165] focus:ring-1 focus:ring-[#004165]">
+                
+                <button onclick="verifyPasscode()" 
+                    class="w-full bg-[#004165] text-white hover:bg-[#772432] font-bold px-6 py-3 rounded-xl shadow-md transition transform active:scale-95 text-xs uppercase tracking-wider">
+                    Verify Access
+                </button>
+                <p id="errorMessage" class="text-xs text-red-600 font-bold hidden">❌ INVALID ACCESS CREDENTIALS</p>
+            </div>
+
+            <!-- Secret Revealed Area (Hidden by default) -->
+            <div id="secretBox" class="hidden transition duration-500 space-y-4">
+                <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-xs font-bold">
+                    🔓 ACCESS GRANTED · DASHBOARD LINK COMPILED
+                </div>
+                <!-- Linked directly to your Notion workspace portal -->
+                <a id="dashboardLink" href="https://app.notion.com/p/38728a65701980d6b934fdd92f6c10dc?source=copy_link" target="_blank" 
+                    class="block w-full text-center bg-[#F2A900] text-[#004165] hover:bg-[#004165] hover:text-white font-extrabold px-6 py-4 rounded-xl shadow-md transition text-xs tracking-wider uppercase animate-pulse">
+                    Open Notion Dashboard →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Spacing Anchor -->
+    <div class="pb-16"></div>
+
+    <!-- Security Authentication Script -->
+    <script>
+        function verifyPasscode() {
+            const input = document.getElementById('passcodeInput').value;
+            const errorMsg = document.getElementById('errorMessage');
+            const authBox = document.getElementById('authBox');
+            const secretBox = document.getElementById('secretBox');
+            
+            // Edit the 6 digits inside the quotation marks to set your custom password!
+            if (input === "888888") {
+                errorMsg.classList.add('hidden');
+                authBox.classList.add('hidden');
+                secretBox.classList.remove('hidden');
+            } else {
+                errorMsg.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
