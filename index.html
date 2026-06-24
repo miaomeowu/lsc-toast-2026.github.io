@@ -13,44 +13,92 @@
 </head>
 <body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
-    <!-- Navigation Bar (MISCELLANEOUS IS VISIBLE HERE) -->
+    <!-- Dynamic Navigation Bar -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4 relative">
             <div class="text-md font-bold tracking-wider text-[#F2A900]">
                 LSC TOASTMASTERS 2026
             </div>
-            <div class="space-x-3 md:space-x-4 lg:space-x-6 text-[11px] md:text-xs font-bold flex flex-wrap justify-end">
-                <a href="index.html" class="text-[#F2A900] transition">[HOME]</a>
-                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
-                <a href="apply.html" class="hover:text-[#F2A900] transition">[APPLY]</a>
-                <a href="contact.html" class="hover:text-[#F2A900] transition">[CONTACT]</a>
-                <a href="misc.html" class="hover:text-[#F2A900] transition">[MISCELLANEOUS]</a>
+            
+            <!-- Mobile Menu Toggle Button (Visible on small screens only) -->
+            <button id="menuToggle" onclick="toggleMenu()" class="md:hidden text-[#F2A900] font-extrabold text-lg p-2 focus:outline-none cursor-pointer select-none">
+                &gt;
+            </button>
+
+            <!-- Desktop Links + Mobile Sidebar Links -->
+            <div id="navLinks" class="hidden absolute top-full right-0 mt-2 bg-[#004165] border-l border-b border-[#772432] p-4 flex-col space-y-4 shadow-xl rounded-bl-xl md:static md:mt-0 md:bg-transparent md:border-none md:p-0 md:flex md:flex-row md:space-y-0 md:space-x-6 text-xs font-bold transition-all z-50">
+                <a href="index.html" class="text-[#F2A900] transition block">[HOME]</a>
+                <a href="bio.html" class="hover:text-[#F2A900] transition block">[TEAM]</a>
+                <a href="apply.html" class="hover:text-[#F2A900] transition block">[APPLY]</a>
+                <a href="contact.html" class="hover:text-[#F2A900] transition block">[CONTACT]</a>
+                <a href="misc.html" class="hover:text-[#F2A900] transition block">[MISCELLANEOUS]</a>
             </div>
         </div>
     </nav>
 
-    <!-- MAIN HOME CONTENT (Perfectly centered on the viewport) -->
-    <main class="max-w-4xl mx-auto text-center py-16 px-6 my-auto w-full">
+    <!-- MAIN HOME CONTENT -->
+    <main class="max-w-4xl mx-auto text-center py-12 px-6 my-auto w-full space-y-12">
         
-        <!-- Cleaned title with spaces and controlled word-breaking -->
-        <h1 class="text-xl md:text-3xl font-extrabold text-[#004165] tracking-wide mb-8 max-w-3xl mx-auto leading-snug uppercase break-words">
-            La Salle College Toastmasters International Team 2026
-        </h1>
-        
-        <!-- Introduction Box -->
-        <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 max-w-2xl mx-auto text-sm md:text-base text-gray-600 leading-relaxed text-left border-l-4 border-[#772432]">
-            Welcome to the official recruitment gateway of the La Salle College Toastmasters International Team. We are dedicated to nurturing eloquent communicators, fostering absolute confidence, and empowering global leaders through structured speech modules. Swap this exact sentence block with your final 60-word narrative right within your GitHub dashboard to establish your core mission statement.
-        </div>
-        
-        <div class="mt-12">
-            <a href="apply.html" class="inline-block bg-[#004165] text-white hover:bg-[#772432] font-bold px-6 py-3 rounded-xl shadow-md transition transform active:scale-95 text-xs uppercase tracking-wider">
-                Proceed to Registration →
-            </a>
-        </div>
+        <!-- Title Heading -->
+        <section>
+            <h1 class="text-xl md:text-3xl font-extrabold text-[#004165] tracking-wide mb-6 max-w-3xl mx-auto leading-snug uppercase break-words">
+                La Salle College Toastmasters International Team 2026
+            </h1>
+            
+            <!-- Introduction Box -->
+            <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 max-w-2xl mx-auto text-sm md:text-base text-gray-600 leading-relaxed text-left border-l-4 border-[#772432]">
+                Welcome to the official recruitment gateway of the La Salle College Toastmasters International Team. We are dedicated to nurturing eloquent communicators, fostering absolute confidence, and empowering global leaders through structured speech modules. Swap this exact sentence block with your final 60-word narrative right within your GitHub dashboard to establish your core mission statement.
+            </div>
+            
+            <div class="mt-8">
+                <a href="apply.html" class="inline-block bg-[#004165] text-white hover:bg-[#772432] font-bold px-6 py-3 rounded-xl shadow-md transition transform active:scale-95 text-xs uppercase tracking-wider">
+                    Proceed to Registration →
+                </a>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 max-w-2xl mx-auto">
+
+        <!-- NEW FAQ TAB SECTION -->
+        <section class="max-w-2xl mx-auto text-left space-y-4">
+            <h2 class="text-md font-bold text-[#004165] tracking-wider uppercase mb-4">// FREQUENTLY_ASKED_QUESTIONS</h2>
+            
+            <div class="space-y-3">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <h3 class="font-bold text-xs text-[#772432] mb-2">Q: WHO CAN JOIN LSC TOASTMASTERS?</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">All students looking to improve public speaking, verbal pacing, or leadership attributes are highly encouraged to register before deadlines close.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <h3 class="font-bold text-xs text-[#772432] mb-2">Q: WHAT DO SESSIONS INVOLVE?</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Meetings consist of structured table topics, evaluation drills, and supportive peer-to-peer performance critiques aligned with international frameworks.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Bottom Spacing Anchor -->
     <div class="pb-16"></div>
+
+    <!-- Navigation Toggle Script -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const toggleBtn = document.getElementById('menuToggle');
+            
+            if (navLinks.classList.contains('hidden')) {
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('flex');
+                toggleBtn.innerHTML = '&lt;'; // Changes to < when open
+            } else {
+                navLinks.classList.add('hidden');
+                navLinks.classList.remove('flex');
+                toggleBtn.innerHTML = '&gt;'; // Changes back to > when closed
+            }
+        }
+    </script>
 
 </body>
 </html>
