@@ -4,28 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miscellaneous Portal | LSC Toastmasters 2026</title>
+    <!-- Tailwind CSS for unbreakable, modern layout margins -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Load JetBrains Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
+    <!-- Navigation Bar -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4 relative">
             <div class="text-md font-bold tracking-wider text-[#F2A900]">
                 LSC TOASTMASTERS 2026
             </div>
-            <div class="space-x-3 md:space-x-4 lg:space-x-6 text-[11px] md:text-xs font-bold flex flex-wrap justify-end">
-                <a href="index.html" class="hover:text-[#F2A900] transition">[HOME]</a>
-                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
-                <a href="apply.html" class="hover:text-[#F2A900] transition">[APPLY]</a>
-                <a href="contact.html" class="hover:text-[#F2A900] transition">[CONTACT]</a>
-                <a href="misc.html" class="text-[#F2A900] transition">[MISCELLANEOUS]</a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuToggle" onclick="toggleMenu()" class="md:hidden text-[#F2A900] font-extrabold text-lg p-2 focus:outline-none cursor-pointer select-none">
+                &gt;
+            </button>
+
+            <!-- Links Group -->
+            <div id="navLinks" class="hidden absolute top-full right-0 mt-2 bg-[#004165] border-l border-b border-[#772432] p-4 flex-col space-y-4 shadow-xl rounded-bl-xl md:static md:mt-0 md:bg-transparent md:border-none md:p-0 md:flex md:flex-row md:space-y-0 md:space-x-6 text-xs font-bold transition-all z-50">
+                <a href="index.html" class="hover:text-[#F2A900] transition block">[HOME]</a>
+                <a href="bio.html" class="hover:text-[#F2A900] transition block">[TEAM]</a>
+                <a href="apply.html" class="hover:text-[#F2A900] transition block">[APPLY]</a>
+                <a href="contact.html" class="hover:text-[#F2A900] transition block">[CONTACT]</a>
+                <a href="misc.html" class="text-[#F2A900] transition block">[MISCELLANEOUS]</a>
             </div>
         </div>
     </nav>
 
+    <!-- GATEWAY CONTENT INNER BODY -->
     <main class="max-w-md mx-auto py-12 px-6 my-auto w-full">
         <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 text-center space-y-6">
             <h1 class="text-xl font-bold tracking-wider text-[#004165] uppercase">
@@ -33,6 +44,7 @@
             </h1>
             <p class="text-xs text-gray-500">Authorized personnel verification required.</p>
 
+            <!-- Input Form Box -->
             <div id="authBox" class="space-y-4">
                 <input type="password" id="passcodeInput" maxlength="6" placeholder="ENTER 6-DIGIT CODE" 
                     class="w-full tracking-widest text-center font-bold border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 text-md focus:outline-none focus:border-[#004165] focus:ring-1 focus:ring-[#004165]">
@@ -44,6 +56,7 @@
                 <p id="errorMessage" class="text-xs text-red-600 font-bold hidden">❌ INVALID ACCESS CREDENTIALS</p>
             </div>
 
+            <!-- Secret Revealed Area (Hidden by default) -->
             <div id="secretBox" class="hidden transition duration-500 space-y-4">
                 <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-xs font-bold">
                     🔓 ACCESS GRANTED · DASHBOARD LINK COMPILED
@@ -56,16 +69,31 @@
         </div>
     </main>
 
+    <!-- Bottom Spacing Anchor -->
     <div class="pb-16"></div>
 
+    <!-- Script Block -->
     <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const toggleBtn = document.getElementById('menuToggle');
+            if (navLinks.classList.contains('hidden')) {
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('flex');
+                toggleBtn.innerHTML = '&lt;';
+            } else {
+                navLinks.classList.add('hidden');
+                navLinks.classList.remove('flex');
+                toggleBtn.innerHTML = '&gt;';
+            }
+        }
+
         function verifyPasscode() {
             const input = document.getElementById('passcodeInput').value;
             const errorMsg = document.getElementById('errorMessage');
             const authBox = document.getElementById('authBox');
             const secretBox = document.getElementById('secretBox');
             
-            // Adjust the string sequence here if you decide to change the passcode!
             if (input === "888888") {
                 errorMsg.classList.add('hidden');
                 authBox.classList.add('hidden');
