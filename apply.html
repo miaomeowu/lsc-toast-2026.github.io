@@ -2,41 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Recruitment Gateway | LSC Toastmasters 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Portal | LSC Toastmasters 2026</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
-    <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
-<body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased h-screen max-h-screen overflow-hidden flex flex-col selection:bg-[#F2A900]/30 selection:text-[#004165]">
+<body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
-    <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] flex-shrink-0">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-4 w-full">
+    <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
             <div class="text-md font-bold tracking-wider text-[#F2A900]">
                 LSC TOASTMASTERS 2026
             </div>
-            <div class="space-x-6 text-xs font-bold">
-                <a href="index.html" class="hover:text-[#F2A900] transition">[HOME]</a>
-                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
-                <a href="apply.html" class="text-[#F2A900] transition">[APPLY]</a>
-                <a href="contact.html" class="hover:text-[#F2A900] transition">[CONTACT]</a>
-            </div>
+            <a href="menu.html" class="bg-[#772432] text-white hover:bg-[#F2A900] hover:text-[#004165] font-bold px-4 py-2 rounded-xl shadow-sm transition text-xs uppercase tracking-wider select-none">
+                &lt;NAVIGATION&gt;
+            </a>
         </div>
     </nav>
 
-    <div class="text-center pt-6 pb-2 px-6 flex-shrink-0">
-        <h1 class="text-lg md:text-xl font-extrabold text-[#004165] tracking-wider uppercase">
-            // RECRUITMENT GATEWAY
-        </h1>
-    </div>
+    <main class="max-w-2xl mx-auto py-12 px-6 my-auto w-full space-y-6">
+        <div class="text-center space-y-2">
+            <h1 class="text-xl md:text-2xl font-extrabold text-[#004165] tracking-wide uppercase">// CANDIDATE_APPLICATION</h1>
+            <p class="text-xs text-gray-500">Please provide precise metrics below. Responses route automatically to the administrative sheet.</p>
+        </div>
 
-    <main class="w-full max-w-5xl mx-auto px-4 pb-4 flex-grow overflow-hidden">
-        <div class="w-full h-full bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden relative">
-            <iframe data-tally-src="https://tally.so/r/jaWNK1?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="La Salle College Toastmasters International Team 2026-2027 Recruitment Gateway" class="absolute inset-0 w-full h-full"></iframe>
+        <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-4 h-[600px] flex items-center justify-center">
+            <div class="text-center space-y-3 p-6">
+                <p class="text-xs text-gray-400 font-bold tracking-wider uppercase">// LIVE_FORM_CONTAINER_ACTIVE</p>
+                <p class="text-xs text-gray-500 max-w-xs mx-auto">Your embedded registration engine goes here to funnel submissions safely to Google Sheets.</p>
+            </div>
         </div>
     </main>
 
+    <div class="pb-16"></div>
 </body>
 </html>
