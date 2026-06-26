@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Portal | LSC Toastmasters 2026</title>
+    <!-- Tailwind CSS for unbreakable, modern layout margins -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tally Widget Script Embed -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <!-- Load JetBrains Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
+    <!-- Navigation Bar (Exactly identical to index.html) -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
         <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
             
@@ -18,6 +23,7 @@
                 LSC TOASTMASTERS 2026
             </div>
             
+            <!-- Global Navigation Button linking to menu.html -->
             <a href="menu.html" class="bg-[#772432] text-white hover:bg-[#F2A900] hover:text-[#004165] font-bold px-4 py-2 rounded-xl shadow-sm transition text-xs uppercase tracking-wider select-none">
                 &lt;NAVIGATION&gt;
             </a>
@@ -25,17 +31,25 @@
         </div>
     </nav>
 
-    <main class="max-w-2xl mx-auto py-12 px-6 my-auto w-full space-y-6">
+    <!-- MAIN CONTENT -->
+    <main class="max-w-3xl mx-auto py-12 px-6 my-auto w-full space-y-6">
         <div class="text-center space-y-2">
             <h1 class="text-xl md:text-2xl font-extrabold text-[#004165] tracking-wide uppercase">// CANDIDATE_APPLICATION</h1>
             <p class="text-xs text-gray-500">Please provide precise metrics below. Responses route automatically to the administrative sheet.</p>
         </div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-4 h-[600px] flex items-center justify-center">
-            <div class="text-center space-y-3 p-6">
-                <p class="text-xs text-gray-400 font-bold tracking-wider uppercase">// LIVE_FORM_CONTAINER_ACTIVE</p>
-                <p class="text-xs text-gray-500 max-w-xs mx-auto">Your embedded registration engine goes here to funnel submissions safely to Google Sheets.</p>
-            </div>
+        <!-- Live Tally Form Embed Box Container -->
+        <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden h-[650px] w-full relative">
+            <iframe 
+                data-tally-src="https://tally.so/r/jaWNK1?transparentBackground=1" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                title="La Salle College Toastmasters International Team 2026-2027 Recruitment Gateway"
+                class="absolute inset-0 w-full h-full rounded-2xl">
+            </iframe>
         </div>
     </main>
 
