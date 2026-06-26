@@ -3,58 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | LSC Toastmasters 2026</title>
+    <title>Contact Desk | LSC Toastmasters 2026</title>
+    <!-- Tailwind CSS for unbreakable, modern layout margins -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Load JetBrains Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (Exactly identical to index.html) -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
         <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            
             <div class="text-md font-bold tracking-wider text-[#F2A900]">
                 LSC TOASTMASTERS 2026
             </div>
-            <div class="space-x-6 text-xs font-bold">
-                <a href="index.html" class="hover:text-[#F2A900] transition">[HOME]</a>
-                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
-                <a href="apply.html" class="hover:text-[#F2A900] transition">[APPLY]</a>
-                <a href="contact.html" class="text-[#F2A900] transition">[CONTACT]</a>
-            </div>
+            
+            <!-- Global Navigation Button linking to menu.html -->
+            <a href="menu.html" class="bg-[#772432] text-white hover:bg-[#F2A900] hover:text-[#004165] font-bold px-4 py-2 rounded-xl shadow-sm transition text-xs uppercase tracking-wider select-none">
+                &lt;NAVIGATION&gt;
+            </a>
+
         </div>
     </nav>
 
-    <!-- MAIN CONTACT PORTAL -->
-    <main class="max-w-md mx-auto py-12 px-6 my-auto w-full">
-        <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 text-center space-y-6">
-            <h1 class="text-xl font-bold tracking-wider text-[#004165] uppercase">
-                Contact Portal
-            </h1>
-            
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Have inquiries regarding interview schedules, calendar alignments, or other questions? Reach out directly through our official channels below.
-            </p>
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto py-12 px-6 my-auto w-full space-y-8">
+        <div class="text-center space-y-2">
+            <h1 class="text-xl md:text-2xl font-extrabold text-[#004165] tracking-wide uppercase">// CONTACT_DESK</h1>
+            <p class="text-xs text-gray-500">Have questions about recruitment or sessions? Connect through our official channels.</p>
+        </div>
 
-            <!-- Secure Channels Panel -->
-            <div class="p-5 bg-gray-50 border border-gray-200 rounded-xl text-left space-y-4 text-xs font-mono">
+        <!-- Contact Options Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            
+            <!-- Email Box -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm border-l-4 border-[#772432] flex flex-col justify-between">
                 <div>
-                    <span class="font-bold text-[#772432] block mb-1">■ EMAIL </span>
-                    <a href="mailto:s25250@lsc.hk" class="text-[#004165] hover:underline break-all">s25250@lsc.hk</a>
+                    <div class="text-xs font-bold text-[#004165] tracking-widest uppercase mb-1">OFFICIAL EMAIL</div>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">For application processing, partner requests, and administrative queries.</p>
                 </div>
-                
-                <div class="border-t border-gray-200 pt-4">
-                    <span class="font-bold text-[#772432] block mb-1">■ NOT-REALLY-HOT-LINE / WHATSAPP</span>
-                    <!-- Swap XXXXXXXX out with your phone number -->
-                    <a href="tel:+852 6945 8321" class="text-[#004165] hover:underline font-bold">+852 6945 8321</a>
-                </div>
+                <a href="mailto:toastmasters@lsc.edu.hk" class="text-sm font-extrabold text-[#772432] hover:text-[#004165] transition break-all underline decoration-2">
+                    toastmasters@lsc.edu.hk
+                </a>
             </div>
+
+            <!-- Venue Box -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm border-l-4 border-[#F2A900]">
+                <div class="text-xs font-bold text-[#004165] tracking-widest uppercase mb-1">SESSION VENUE</div>
+                <div class="text-sm font-extrabold text-gray-800 mb-2">La Salle College Campus</div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    4 La Salle Road,<br>
+                    Kowloon City, Hong Kong
+                </p>
+            </div>
+
         </div>
     </main>
 
-    <!-- Bottom Spacing Anchor -->
     <div class="pb-16"></div>
-
 </body>
 </html>
