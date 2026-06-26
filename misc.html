@@ -16,31 +16,49 @@
     <!-- Navigation Bar -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
         <div class="max-w-6xl mx-auto flex justify-between items-center px-4 relative">
-            <div class="text-md font-bold tracking-wider text-[#F2A900]">
-                LSC TOASTMASTERS 2026
-            </div>
             
-            <!-- Mobile Menu Toggle Button -->
-            <button id="menuToggle" onclick="toggleMenu()" class="md:hidden text-[#F2A900] font-extrabold text-lg p-2 focus:outline-none cursor-pointer select-none">
+            <!-- Left Mobile Drawer Trigger -->
+            <button id="menuToggle" onclick="toggleDrawer()" class="md:hidden text-[#F2A900] font-extrabold text-lg p-2 focus:outline-none cursor-pointer select-none">
                 &gt;
             </button>
 
-            <!-- Links Group -->
-            <div id="navLinks" class="hidden absolute top-full right-0 mt-2 bg-[#004165] border-l border-b border-[#772432] p-4 flex-col space-y-4 shadow-xl rounded-bl-xl md:static md:mt-0 md:bg-transparent md:border-none md:p-0 md:flex md:flex-row md:space-y-0 md:space-x-6 text-xs font-bold transition-all z-50">
-                <a href="index.html" class="hover:text-[#F2A900] transition block">[HOME]</a>
-                <a href="bio.html" class="hover:text-[#F2A900] transition block">[TEAM]</a>
-                <a href="apply.html" class="hover:text-[#F2A900] transition block">[APPLY]</a>
-                <a href="contact.html" class="hover:text-[#F2A900] transition block">[CONTACT]</a>
-                <a href="misc.html" class="text-[#F2A900] transition block">[MISCELLANEOUS]</a>
+            <div class="text-md font-bold tracking-wider text-[#F2A900] mx-auto md:mx-0">
+                LSC TOASTMASTERS 2026
+            </div>
+            
+            <!-- Desktop Navbar Layout links -->
+            <div class="hidden md:flex space-x-6 text-xs font-bold">
+                <a href="index.html" class="hover:text-[#F2A900] transition">[HOME]</a>
+                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
+                <a href="apply.html" class="hover:text-[#F2A900] transition">[APPLY]</a>
+                <a href="contact.html" class="hover:text-[#F2A900] transition">[CONTACT]</a>
+                <a href="misc.html" class="text-[#F2A900] transition">[MISCELLANEOUS]</a>
             </div>
         </div>
     </nav>
+
+    <!-- LEFT SIDE SLIDE-OUT DRAWER (Mobile Only) -->
+    <div id="leftDrawer" class="fixed top-0 left-0 h-full w-64 bg-[#004165] border-r-2 border-[#772432] z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl flex flex-col p-6 space-y-6">
+        <div class="text-xs font-bold text-[#F2A900] tracking-widest border-b border-gray-700 pb-4 uppercase">
+            // NAVIGATION_MENU
+        </div>
+        <div class="flex flex-col space-y-4 text-sm font-bold text-white">
+            <a href="index.html" class="hover:text-[#F2A900] transition py-2">[HOME]</a>
+            <a href="bio.html" class="hover:text-[#F2A900] transition py-2">[TEAM]</a>
+            <a href="apply.html" class="hover:text-[#F2A900] transition py-2">[APPLY]</a>
+            <a href="contact.html" class="hover:text-[#F2A900] transition py-2">[CONTACT]</a>
+            <a href="misc.html" class="text-[#F2A900] transition py-2">[MISCELLANEOUS]</a>
+        </div>
+    </div>
+
+    <!-- Background Overlay -->
+    <div id="drawerOverlay" onclick="toggleDrawer()" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden"></div>
 
     <!-- GATEWAY CONTENT INNER BODY -->
     <main class="max-w-md mx-auto py-12 px-6 my-auto w-full">
         <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 text-center space-y-6">
             <h1 class="text-xl font-bold tracking-wider text-[#004165] uppercase">
-                EXECUTIVE_GATEWAY
+                // EXECUTIVE_GATEWAY
             </h1>
             <p class="text-xs text-gray-500">Authorized personnel verification required.</p>
 
@@ -53,7 +71,7 @@
                     class="w-full bg-[#004165] text-white hover:bg-[#772432] font-bold px-6 py-3 rounded-xl shadow-md transition transform active:scale-95 text-xs uppercase tracking-wider">
                     Verify Access
                 </button>
-                <p id="errorMessage" class="text-xs text-red-600 font-bold hidden">❌ INVALID PASSWORD. PLEASE CONTACT ADMINISTRATOR</p>
+                <p id="errorMessage" class="text-xs text-red-600 font-bold hidden">❌ INVALID ACCESS CREDENTIALS</p>
             </div>
 
             <!-- Secret Revealed Area (Hidden by default) -->
@@ -72,18 +90,22 @@
     <!-- Bottom Spacing Anchor -->
     <div class="pb-16"></div>
 
-    <!-- Script Block -->
+    <!-- Script Block Handling Authentications and Left Drawers -->
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
+        function toggleDrawer() {
+            const drawer = document.getElementById('leftDrawer');
+            const overlay = document.getElementById('drawerOverlay');
             const toggleBtn = document.getElementById('menuToggle');
-            if (navLinks.classList.contains('hidden')) {
-                navLinks.classList.remove('hidden');
-                navLinks.classList.add('flex');
+            
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                drawer.classList.add('translate-x-0');
+                overlay.classList.remove('hidden');
                 toggleBtn.innerHTML = '&lt;';
             } else {
-                navLinks.classList.add('hidden');
-                navLinks.classList.remove('flex');
+                drawer.classList.remove('translate-x-0');
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
                 toggleBtn.innerHTML = '&gt;';
             }
         }
