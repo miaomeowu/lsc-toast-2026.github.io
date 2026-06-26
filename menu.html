@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu</title>
+    <title>Navigation Menu | LSC Toastmasters 2026</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
             <div class="text-md font-bold tracking-wider text-[#F2A900]">
                 LSC TOASTMASTERS 2026
             </div>
-            <!-- Back Button returns user to Home Screen -->
             <a href="index.html" class="text-[#F2A900] font-extrabold text-lg p-2 select-none decoration-none">
                 &lt;
             </a>
@@ -27,16 +26,58 @@
     <!-- Full Screen Directory Grid -->
     <main class="max-w-md mx-auto my-auto w-full px-6 py-12">
         <div class="space-y-6 text-center">
-            <div class="text-xs font-bold text-[#F2A900] tracking-widest uppercase mb-8">SITE_DIRECTORY</div>
+            <div class="text-xs font-bold text-[#F2A900] tracking-widest uppercase mb-8">// SITE_DIRECTORY</div>
             
-            <a href="index.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">HOME</a>
-            <a href="bio.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">TEAM</a>
-            <a href="apply.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">APPLICATION</a>
-            <a href="contact.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">CONTACT</a>
-            <a href="misc.html" class="block w-full border border-[#772432] hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5 text-[#F2A900]">MISCELLANEOUS</a>
+            <a href="index.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">[HOME]</a>
+            <a href="bio.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">[TEAM]</a>
+            <a href="apply.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">[APPLY]</a>
+            <a href="contact.html" class="block w-full border border-white/20 hover:border-[#F2A900] hover:text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5">[CONTACT]</a>
+            
+            <!-- Long Press Button (Converted to a div styled like a button to block normal click actions) -->
+            <div id="miscLongPressBtn" 
+                class="block w-full border border-[#772432] active:bg-[#772432] text-[#F2A900] font-bold py-4 rounded-xl transition text-sm uppercase tracking-wider bg-white/5 cursor-pointer select-none">
+                [MISCELLANEOUS] <span class="text-[10px] text-gray-400 block mt-1 font-normal">(HOLD TO OPEN)</span>
+            </div>
         </div>
     </main>
 
     <div class="pb-16"></div>
+
+    <!-- Long Press Controller Script -->
+    <script>
+        const btn = document.getElementById('miscLongPressBtn');
+        let pressTimer;
+        
+        // Define how long the user needs to hold down (800 milliseconds)
+        const holdDuration = 800; 
+
+        function startPress(e) {
+            // Prevent scrolling/zoom anomalies on mobile long press
+            if (e.type === 'touchstart') {
+                pressTimer = setTimeout(() => {
+                    window.location.href = 'misc.html';
+                }, holdDuration);
+            } else {
+                // Desktop Mouse Hold
+                pressTimer = setTimeout(() => {
+                    window.location.href = 'misc.html';
+                }, holdDuration);
+            }
+        }
+
+        function cancelPress() {
+            clearTimeout(pressTimer);
+        }
+
+        // Desktop Mouse Triggers
+        btn.addEventListener('mousedown', startPress);
+        btn.addEventListener('mouseup', cancelPress);
+        btn.addEventListener('mouseleave', cancelPress);
+
+        // Mobile Screen Touch Triggers
+        btn.addEventListener('touchstart', startPress);
+        btn.addEventListener('touchend', cancelPress);
+        btn.addEventListener('touchmove', cancelPress);
+    </script>
 </body>
 </html>
