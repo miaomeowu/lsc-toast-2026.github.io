@@ -13,61 +13,31 @@
 </head>
 <body class="bg-gray-50 font-['JetBrains_Mono'] text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-[#F2A900]/30 selection:text-[#004165]">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (Tabs removed, single Navigation button added) -->
     <nav class="bg-[#004165] text-white p-4 shadow-md sticky top-0 z-50 border-b-2 border-[#772432] w-full">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-4 relative">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
             
-            <!-- Left Mobile Drawer Trigger (Visible on small screens only) -->
-            <button id="menuToggle" onclick="toggleDrawer()" class="md:hidden text-[#F2A900] font-extrabold text-lg p-2 focus:outline-none cursor-pointer select-none">
-                &gt;
-            </button>
-
-            <div class="text-md font-bold tracking-wider text-[#F2A900] mx-auto md:mx-0">
+            <div class="text-md font-bold tracking-wider text-[#F2A900]">
                 LSC TOASTMASTERS 2026
             </div>
             
-            <!-- Standard Desktop Links (Hidden on Mobile) -->
-            <div class="hidden md:flex space-x-6 text-xs font-bold">
-                <a href="index.html" class="text-[#F2A900] transition">[HOME]</a>
-                <a href="bio.html" class="hover:text-[#F2A900] transition">[TEAM]</a>
-                <a href="apply.html" class="hover:text-[#F2A900] transition">[APPLY]</a>
-                <a href="contact.html" class="hover:text-[#F2A900] transition">[CONTACT]</a>
-                <a href="misc.html" class="hover:text-[#F2A900] transition">[MISCELLANEOUS]</a>
-            </div>
+            <!-- Global Navigation Button linking to menu.html -->
+            <a href="menu.html" class="bg-[#772432] text-white hover:bg-[#F2A900] hover:text-[#004165] font-bold px-4 py-2 rounded-xl shadow-sm transition text-xs uppercase tracking-wider select-none">
+                &lt;NAVIGATION&gt;
+            </a>
+
         </div>
     </nav>
 
-    <!-- LEFT SIDE SLIDE-OUT DRAWER (Mobile Only) -->
-    <div id="leftDrawer" class="fixed top-0 left-0 h-full w-64 bg-[#004165] border-r-2 border-[#772432] z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl flex flex-col p-6 space-y-6">
-        <div class="text-xs font-bold text-[#F2A900] tracking-widest border-b border-gray-700 pb-4 uppercase">
-            // NAVIGATION_MENU
-        </div>
-        <div class="flex flex-col space-y-4 text-sm font-bold text-white">
-            <a href="index.html" class="text-[#F2A900] transition py-2">[HOME]</a>
-            <a href="bio.html" class="hover:text-[#F2A900] transition py-2">[TEAM]</a>
-            <a href="apply.html" class="hover:text-[#F2A900] transition py-2">[APPLY]</a>
-            <a href="contact.html" class="hover:text-[#F2A900] transition py-2">[CONTACT]</a>
-            <a href="misc.html" class="hover:text-[#F2A900] transition py-2">[MISCELLANEOUS]</a>
-        </div>
-    </div>
-
-    <!-- Background Overlay for Mobile Drawer Close Context -->
-    <div id="drawerOverlay" onclick="toggleDrawer()" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden"></div>
-
     <!-- MAIN HOME CONTENT -->
     <main class="max-w-4xl mx-auto text-center py-12 px-6 my-auto w-full space-y-12">
-        
-        <!-- Title Heading -->
         <section>
             <h1 class="text-xl md:text-3xl font-extrabold text-[#004165] tracking-wide mb-6 max-w-3xl mx-auto leading-snug uppercase break-words">
                 La Salle College Toastmasters International Team 2026
             </h1>
-            
-            <!-- Introduction Box -->
             <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 max-w-2xl mx-auto text-sm md:text-base text-gray-600 leading-relaxed text-left border-l-4 border-[#772432]">
                 Welcome to the official recruitment gateway of the La Salle College Toastmasters International Team. We are dedicated to nurturing eloquent communicators, fostering absolute confidence, and empowering global leaders through structured speech modules. Swap this exact sentence block with your final 60-word narrative right within your GitHub dashboard to establish your core mission statement.
             </div>
-            
             <div class="mt-8">
                 <a href="apply.html" class="inline-block bg-[#004165] text-white hover:bg-[#772432] font-bold px-6 py-3 rounded-xl shadow-md transition transform active:scale-95 text-xs uppercase tracking-wider">
                     Proceed to Registration →
@@ -80,13 +50,11 @@
         <!-- FAQ SECTION -->
         <section class="max-w-2xl mx-auto text-left space-y-4">
             <h2 class="text-md font-bold text-[#004165] tracking-wider uppercase mb-4">// FREQUENTLY_ASKED_QUESTIONS</h2>
-            
             <div class="space-y-3">
                 <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                     <h3 class="font-bold text-xs text-[#772432] mb-2">Q: WHO CAN JOIN LSC TOASTMASTERS?</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">All students looking to improve public speaking, verbal pacing, or leadership attributes are highly encouraged to register before deadlines close.</p>
                 </div>
-                
                 <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                     <h3 class="font-bold text-xs text-[#772432] mb-2">Q: WHAT DO SESSIONS INVOLVE?</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">Meetings consist of structured table topics, evaluation drills, and supportive peer-to-peer performance critiques aligned with international frameworks.</p>
@@ -95,29 +63,6 @@
         </section>
     </main>
 
-    <!-- Bottom Spacing Anchor -->
     <div class="pb-16"></div>
-
-    <!-- Left Drawer Interaction Script -->
-    <script>
-        function toggleDrawer() {
-            const drawer = document.getElementById('leftDrawer');
-            const overlay = document.getElementById('drawerOverlay');
-            const toggleBtn = document.getElementById('menuToggle');
-            
-            if (drawer.classList.contains('-translate-x-full')) {
-                drawer.classList.remove('-translate-x-full');
-                drawer.classList.add('translate-x-0');
-                overlay.classList.remove('hidden');
-                toggleBtn.innerHTML = '&lt;'; // Set left arrow < when panel is open
-            } else {
-                drawer.classList.remove('translate-x-0');
-                drawer.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
-                toggleBtn.innerHTML = '&gt;'; // Set right arrow > when panel is closed
-            }
-        }
-    </script>
-
 </body>
 </html>
